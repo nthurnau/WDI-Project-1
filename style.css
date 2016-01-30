@@ -1,0 +1,65 @@
+.main {
+  background-color: #333333;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: url("images/ForbForstBkgnd.jpg");
+  height: 650px;
+  width: 1200x;
+}
+
+body {
+  background-color: #333333;
+  font-family: 'Calligraffitti', cursive;;
+  color: #CCCCCC;
+  text-align: center;
+  text-shadow: 2px 2px 2px #9999CC;
+}
+
+.question-top {
+  background-color: #333333;
+  height: 185px;
+  width: 150px;
+  display: inline-block;
+
+}
+
+#q1 {
+  background-image: url("images/gryffindor-crest.png");
+  overflow: hidden;
+  background-size: contain;
+  background-position: center;
+  margin-right: 40px;
+  margin-top: 20px;
+  box-shadow: 3px 3px 5px 6px #CCCCCC;
+
+}
+
+#q2 {
+  background-image: url("images/ravenclaw-crest.jpeg");
+  overflow: hidden;
+  background-size: contain;
+  background-position: center;
+  margin-right: 40px;
+  margin-top: 20px;
+  box-shadow: 3px 3px 5px 6px #CCCCCC;
+}
+#q3
+{
+  background-image: url("images/slytherin-crest.jpg");
+  overflow: hidden;
+  background-size: contain;
+  background-position: center;
+  margin-right: 40px;
+  margin-top: 20px;
+  box-shadow: 3px 3px 5px 6px #CCCCCC;
+}
+
+#q4 {
+  background-image: url("images/hufflepuff-crest.jpeg");
+  overflow: hidden;
+  background-size: contain;
+  background-position: center;
+  margin-top: 20px;
+  box-shadow: 3px 3px 5px 6px #CCCCCC;
+}
