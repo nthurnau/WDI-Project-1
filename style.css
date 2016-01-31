@@ -1,5 +1,5 @@
 body {
-  background-color: #333333;
+  background-color: black;
   font-family: 'Calligraffitti', cursive;
   color: #CCCCCC;
   text-align: center;
@@ -67,14 +67,26 @@ body {
 #question-space {
   height:300px;
   width: 600px;
-  border: 2px white;
   margin-top: 10px;
-  margin-left: 100px;
+  margin-left: 316px;
+
+}
+
+.answer-box-question {
+  height: 275px;
+  width: 575px;
+  border: 2px solid white;
+  border: 2px solid #FF9999;
+  background: #FF3333;
+  opacity: 0.5;
 }
 
 .answer-box {
   margin-top: 10px;
 }
+
+
+
 .answer-input {
   background-color: #CCCCCC;
   font-family: 'Calligraffitti', cursive;
@@ -88,4 +100,20 @@ body {
   color: #fff;
   font-family: 'Calligraffitti', cursive;
   font-size: 13px;
+}
+
+.player {
+  display: inline-block;
+}
+
+#player-1 {
+  float: left;
+  margin-left: 100px;
+  font-size: 20px;
+}
+
+#player-2 {
+  float: right;
+  margin-right: 100px;
+  font-size: 20px;
 }
