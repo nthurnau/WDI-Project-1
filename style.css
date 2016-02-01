@@ -1,6 +1,11 @@
+@font-face {
+      font-family: "lumos";
+      src: url("LUMOS.TTF") format('truetype');
+    }
+
 body {
   background-color: black;
-  font-family: 'Calligraffitti', cursive;
+  font-family: "lumos", cursive;
   color: #CCCCCC;
   text-align: center;
   text-shadow: 2px 2px 2px #9999CC;
@@ -78,7 +83,9 @@ body {
   border: 2px solid white;
   border: 2px solid #FF9999;
   background: #FF3333;
-  opacity: 0.5;
+  opacity: 0.75;
+  font-size: 30px;
+  padding-top: 175px;
 }
 
 .answer-box {
