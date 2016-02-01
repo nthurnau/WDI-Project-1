@@ -53,3 +53,5 @@ var questionEight = {question: "At what age does a young witch or wizard get to 
                    answer: "11 years old"}
 questionEight.askQuestion()
 questionEight.answerQuestion()
+
+//questions get clicked and move to the question spaces
