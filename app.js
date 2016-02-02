@@ -13,7 +13,7 @@ var game = {
   player1:{},
   player2:{},
   currentQuestion: 0,
-  
+
   houses:{
     gryffindor: {
       name: "Gryffindor",
@@ -88,7 +88,10 @@ var game = {
 $(".answer-box-question").hide()
 $(".question-top").on("click", function(){
   $('#question-space').fadeIn(2000).text(game.houses[this.id].questions[0].body).delay(6000).fadeOut(2000).hide(".answer-box-question")
+  // $(".button").text(game.houses[this.id]answerOptions[0,1,2,3].body)
 })
+
+
 
 
 
