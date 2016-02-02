@@ -29,7 +29,7 @@ body {
   display: inline-block;
 }
 
-#q1 {
+#gryffindor {
   background-image: url("images/gryffindor-crest.png");
   overflow: hidden;
   background-size: contain;
@@ -40,7 +40,7 @@ body {
 
 }
 
-#q2 {
+#ravenclaw {
   background-image: url("images/ravenclaw-crest.jpeg");
   overflow: hidden;
   background-size: contain;
@@ -49,8 +49,7 @@ body {
   margin-top: 20px;
   box-shadow: 3px 3px 5px 6px #CCCCCC;
 }
-#q3
-{
+#slytherin {
   background-image: url("images/slytherin-crest.jpg");
   overflow: hidden;
   background-size: contain;
@@ -60,7 +59,7 @@ body {
   box-shadow: 3px 3px 5px 6px #CCCCCC;
 }
 
-#q4 {
+#hufflepuff {
   background-image: url("images/hufflepuff-crest.jpeg");
   overflow: hidden;
   background-size: contain;

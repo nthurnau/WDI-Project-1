@@ -8,14 +8,23 @@ var questionCard4 = document.getElementById("q4")
 var turnCount = 0
 
 //questions
+function askQuestion() {
+  return this.question
+}
+function answerQuestion() {
+  return this.answer
+}
 
 var game = {
-  player1:{}
-  player2:{}
+  player1:{},
+  player2:{},
+  currentQuestion: 0,
+
+
+
   houses:{
     gryffindor: {
-      currentQuestion = 0
-      name: "Gryffindor"
+      name: "Gryffindor",
       questions: [
         {body: "What is the head of Slytherin House's full name?",
         askQuestion: askQuestion,
@@ -29,10 +38,10 @@ var game = {
         answerOptions: ["a. As Himself, duh", "b. He's not in that one.", "c. As an apparition of young Tom Riddle", "d. As an apparition of middle-aged Tom Riddle",],
         answerQuestion: answerQuestion}
       ]
-    }
+    },
+
     ravenclaw: {
-      currentQuestion = 0
-      name: "Ravenclaw"
+      name: "Ravenclaw",
       questions: [
         {body: "Who told Voldemort where Harry's parents were hiding?",
         askQuestion: askQuestion,
@@ -46,10 +55,9 @@ var game = {
         answerOptions: ["a. A black cat with white paws.", "b. An orange tabby with squares around its eyes", "c. A gray cat with white circles around its eyes", "d. A regular tabby with white circles on its eyes"],
         answerQuestion: answerQuestion}
       ]
-    }
+    },
     slytherin: {
-      currentQuestion = 0
-      name: "Slytherin"
+      name: "Slytherin",
       questions: [
         {body: "What are owls used for in the Wizarding world?",
         askQuestion: askQuestion,
@@ -63,10 +71,10 @@ var game = {
         answerOptions: ["a. Society for the Promotion of Elifish Welfare", "b. Society for the Prevention of Evil Warlocks", "c. Society for the Perversion of Entish Woodlands", "d. Society of the Pleasntness of Elastic Waistbands"],
         answerQuestion: answerQuestion}
       ]
-    }
+    },
+
     hufflepuff: {
-      currentQuestion = 0
-      name: "hufflepuff"
+      name: "hufflepuff",
       questions: [
         {body: "At what age does a young witch or wizard get to go to Hogwarts?",
         askQuestion: askQuestion,
@@ -79,40 +87,51 @@ var game = {
         answer: "b. Godrick's Hollow",
         answerOptions: ["a. Godrick's Fuller", "b. Godrick's Hollow", "c. Goodman's Hollow", "d. Little Whinging"],
         answerQuestion: answerQuestion}
+      ]
     }
   }
-
 }
+$(".answer-box-question").hide()
 
-function askQuestion() {
-  return this.question
-}
-function answerQuestion() {
-  return this.answer
-}
+  // $("#q1").on('click', function(){
+  //   for (var i = 0; i < game.houses.gryffindor.questions[i].length; i++) {
+  //     game.houses.gryffindor.questions[i]
+  //   }
+  //   $('#question-space').fadeIn(2000).text(game.houses[this.id].questions[0].body).delay(6000).fadeOut(2000).hide(".answer-box-question")
+  // })
 
+$(".question-top").on("click", function(){
+  // console.log(this.id)
 
-questionEight.askQuestion()
-questionEight.answerQuestion()
+  //console.log(game.houses[this.id].questions[0].body)
+  $('#question-space').fadeIn(2000).text(game.houses[this.id].questions[0].body).delay(6000).fadeOut(2000).hide(".answer-box-question")
 
-//questions get clicked and move to the question spaces
-$(".answer-box-question").hide();
-
-$("#q1").on('click', function(){
-  $('#question-space').fadeIn(2000).text(questionOne.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
 })
 
-$("#q2").on('click', function(){
-  $('#question-space').fadeIn(2000).text(questionTwo.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
-})
 
-$("#q3").on('click', function(){
-  $('#question-space').fadeIn(2000).text(questionThree.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
-})
-
-$("#q4").on('click', function(){
-  $('#question-space').fadeIn(2000).text(questionFour.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
-})
+//
+//
+// questionEight.askQuestion()
+// questionEight.answerQuestion()
+//
+// //questions get clicked and move to the question spaces
+// $(".answer-box-question").hide();
+//
+// $("#q1").on('click', function(){
+//   $('#question-space').fadeIn(2000).text(questionOne.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
+// })
+//
+// $("#q2").on('click', function(){
+//   $('#question-space').fadeIn(2000).text(questionTwo.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
+// })
+//
+// $("#q3").on('click', function(){
+//   $('#question-space').fadeIn(2000).text(questionThree.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
+// })
+//
+// $("#q4").on('click', function(){
+//   $('#question-space').fadeIn(2000).text(questionFour.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
+// })
 
 // $("q4").click(function() {
 //   $( "#question-space").fadeIn( "slow", function() {
