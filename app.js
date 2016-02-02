@@ -88,41 +88,9 @@ var game = {
 $(".answer-box-question").hide()
 $(".question-top").on("click", function(){
   $('#question-space').fadeIn(2000).text(game.houses[this.id].questions[0].body).delay(6000).fadeOut(2000).hide(".answer-box-question")
-  // $(".button").text(game.houses[this.id]answerOptions[0,1,2,3].body)
+  $("#a1").delay(11000).fadeIn(2000).text(game.houses[this.id].questions[0].answerOptions[0]).delay(10000).fadeOut(2000).hide(".button")
+  $("#a2").delay(11000).fadeIn(2000).text(game.houses[this.id].questions[0].answerOptions[1]).delay(10000).fadeOut(2000).hide(".button")
+  $("#a3").delay(11000).fadeIn(2000).text(game.houses[this.id].questions[0].answerOptions[2]).delay(10000).fadeOut(2000).hide(".button")
+  $("#a4").delay(11000).fadeIn(2000).text(game.houses[this.id].questions[0].answerOptions[3]).delay(10000).fadeOut(2000).hide(".button")
 })
-
-
-
-
-
-
-
 //
-//
-// questionEight.askQuestion()
-// questionEight.answerQuestion()
-//
-// //questions get clicked and move to the question spaces
-// $(".answer-box-question").hide();
-//
-// $("#q1").on('click', function(){
-//   $('#question-space').fadeIn(2000).text(questionOne.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
-// })
-//
-// $("#q2").on('click', function(){
-//   $('#question-space').fadeIn(2000).text(questionTwo.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
-// })
-//
-// $("#q3").on('click', function(){
-//   $('#question-space').fadeIn(2000).text(questionThree.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
-// })
-//
-// $("#q4").on('click', function(){
-//   $('#question-space').fadeIn(2000).text(questionFour.askQuestion()).delay(6000).fadeOut(2000).hide(".answer-box-question")
-// })
-
-// $("q4").click(function() {
-//   $( "#question-space").fadeIn( "slow", function() {
-//     console.log("fadein happened!")
-//   });
-// });
