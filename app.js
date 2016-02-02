@@ -1,10 +1,4 @@
-var answerBox = document.querySelector(".answer-input") //may not need
-var questionBox = document.getElementById("question-space")
-var questionCard = document.querySelectorAll(".question-top")
-var questionCard1 = document.getElementById("q1")
-var questionCard2 = document.getElementById("q2")
-var questionCard3 = document.getElementById("q3")
-var questionCard4 = document.getElementById("q4")
+
 var turnCount = 0
 
 //questions
@@ -19,9 +13,7 @@ var game = {
   player1:{},
   player2:{},
   currentQuestion: 0,
-
-
-
+  
   houses:{
     gryffindor: {
       name: "Gryffindor",
@@ -91,22 +83,15 @@ var game = {
     }
   }
 }
+
+// This is round 1 for player 1
 $(".answer-box-question").hide()
-
-  // $("#q1").on('click', function(){
-  //   for (var i = 0; i < game.houses.gryffindor.questions[i].length; i++) {
-  //     game.houses.gryffindor.questions[i]
-  //   }
-  //   $('#question-space').fadeIn(2000).text(game.houses[this.id].questions[0].body).delay(6000).fadeOut(2000).hide(".answer-box-question")
-  // })
-
 $(".question-top").on("click", function(){
-  // console.log(this.id)
-
-  //console.log(game.houses[this.id].questions[0].body)
   $('#question-space').fadeIn(2000).text(game.houses[this.id].questions[0].body).delay(6000).fadeOut(2000).hide(".answer-box-question")
-
 })
+
+
+
 
 
 //
