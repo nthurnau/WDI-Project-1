@@ -44,6 +44,7 @@ var game = {
       game.switchPlayerCheck()
     }),
 
+
     // correctAnswer: game.houses[questionId].questions[game.currentPlayer].answer,
 
   $(".button").on("click", function(){
@@ -57,15 +58,13 @@ var game = {
   checkAnswer: function() {
     console.log("checking answers")
     // console.log(correctAnswer)
-      if (userAnswer === correctAnswer) {
-            currentPlayer = 0
+      if ((userAnswer === correctAnswer) && game.currentPlayer === 0) {
             player1Points += 1
             console.log(player1Points)
-      } else {
-            (userAnswer === correctAnswer)
+      } else if ((userAnswer === correctAnswer) && game.currentPlayer === 1) {
             player2Points += 1
             console.log(player2Points)
-          }
+          } else {null}
     },
 
   displayQuestion: function(houseName) {
@@ -85,13 +84,22 @@ var game = {
 
 
   switchPlayerCheck: function(){
-    if (currentQuestion < 4) {
-      // console.log(currentQuestion)
+    if (currentQuestion <= 4) {
     } else {
       console.log("changing rounds")
       game.currentPlayer = 1
+      window.alert("It's Player 2's Turn!")
     }
   },
+
+  getCurrentPlayer: function(){
+    if (game.currentPlayer = 0){
+      player = playerOne
+    } else {
+      player = playerTwo
+
+    }
+ },
 
 
   //
