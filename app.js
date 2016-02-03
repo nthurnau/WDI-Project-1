@@ -12,6 +12,7 @@ var correctAnswer = null
 var userAnswer = null
 var restartButton = $(".reset-button")
 
+
 //questions
 function askQuestion() {
   return this.question
@@ -35,6 +36,10 @@ var game = {
   gamePlay: function(){
     //game.currentPlayer = game.playerOne
     $(".answer-box-question").hide()
+    $(".button").hide()
+    $("#right").hide()
+    $("#wrong").hide()
+    $("#win").hide()
     $(".question-top").on("click", function(){
       // console.log($(this).data('id'))
       questionId = $(this).data('id')
@@ -61,26 +66,21 @@ var game = {
       if ((userAnswer === correctAnswer) && game.currentPlayer === 0) {
             player1Points += 1
             console.log(player1Points)
-            console.log("you're right!")
+            // $("#right").fadeIn(3000)
             $("#p1-score").html(player1Points)
+            game.rightAnswerAnimation()
       } else if ((userAnswer === correctAnswer) && game.currentPlayer === 1) {
             player2Points += 1
             console.log(player2Points)
             $("#p2-score").html(player2Points)
+            game.rightAnswerAnimation()
           } else {
+            game.wrongAnswerAnimation()
             console.log("you're wrong!")
           }
     },
 
-  rightAnswerAnimation: function() {
-    if (userAnswer === correctAnswer){
-      console.log("you're right!")
-    }
-  },
 
-  displayQuestion: function(houseName) {
-     $('#question-space').fadeIn(fadeTime).text(game.houses[questionId].questions[game.currentPlayer].body).delay(showQuestionTime).fadeOut(fadeTime).hide(".answer-box-question")
-  },
 
   displayAnswers: function(houseName) {
     game.displayAnswer("#a1", 0, houseName, game.currentPlayer)
@@ -108,20 +108,32 @@ var game = {
     console.log("currentQuestion:", currentQuestion)
   },
 
+  rightAnswerAnimation: function() {
+    $("#right").fadeIn(2000).delay(2000).fadeOut(2000).hide("#right")
+  },
+  wrongAnswerAnimation: function() {
+    $("#wrong").fadeIn(2000).delay(2000).fadeOut(2000).hide("#wrong")
+  },
+
+  displayQuestion: function(houseName) {
+     $('#question-space').fadeIn(fadeTime).text(game.houses[questionId].questions[game.currentPlayer].body).delay(showQuestionTime).fadeOut(fadeTime).hide(".answer-box-question")
+  },
 
  checkWinner: function() {
    if (player1Points < player2Points) {
      $(".answer-box-question").fadeIn(fadeTime).text("Player Two Wins!").delay(showQuestionTime).fadeOut(fadeTime)
+      $("#win").delay(2000).fadeIn(fadeTime).fadeOut(fadeTime)
    } else if (player1Points == player2Points) {
      $(".answer-box-question").fadeIn(fadeTime).text("It's a Tie!").delay(showQuestionTime).fadeOut(fadeTime)
+      $("#win").delay(2000).fadeIn(fadeTime).fadeOut(fadeTime)
    } else {
      $(".answer-box-question").fadeIn(fadeTime).text("Player One Wins!").delay(showQuestionTime).fadeOut(fadeTime)
+      $("#win").delay(2000).fadeIn(fadeTime).fadeOut(fadeTime)
    }
  },
 
  gameOver: function() {
    if (currentQuestion >= 8) {
-     window.alert("game over")
      game.checkWinner() //checks who is winning
    }
  },
@@ -195,20 +207,3 @@ var game = {
 }
 
 game.gamePlay()
-
-
-
-// This is intended to give points to players one and two if they answer correctly.
-// var
-// var correctAnswerp2 = game.houses[houseName].questions[game.currentPlayer].answer
-
-// function awardPoints() {
-//   if ((playerTurn === playerOne) &&
-//   (playerOneAnswer === correctAnswer)) {
-//     player1Points += 1
-//   }
-//   else if ((playerTurn === playerTwo) &&
-//     (playerTwoAnswer === correctAnswer)) {
-//       player2Points += 1
-//     }
-// }

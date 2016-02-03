@@ -142,10 +142,12 @@ body {
   float: left;
   margin-left: -64px;
   margin-top: 40px;
+  font-size: 20px;
 }
 
 #p2-score {
   float: right;
   margin-right: -64px;
   margin-top: 40px;
+  font-size: 20px;
 }
