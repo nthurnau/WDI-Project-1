@@ -4,8 +4,8 @@ var currentQuestion = 0 //tracks question number
 var player1Points = 0
 var player2Points = 0
 var showQuestionTime = 600 // 6000
-var answerWaitTime = 1100 // 11000
-var answerDisplayTime = 1000 // 10000
+var answerWaitTime = 600 // 11000
+var answerDisplayTime = 800 // 10000
 var fadeTime = 200 // 2000
 var questionId = null
 var correctAnswer = null
@@ -41,21 +41,26 @@ var game = {
     $("#wrong").hide()
     $("#win").hide()
     $(".question-top").on("click", function(){
-      // console.log($(this).data('id'))
+        $(this).removeClass("available").addClass("unavailable")
+        // if ($("#gryffindor") && $("#ravenclaw") && $("#slytherin") && $("#hufflepuff").hasClass("unavailable")){
+        //   $(".question-top").removeClass("unavailable")
+        //
+        // }
       questionId = $(this).data('id')
       correctAnswer = game.houses[questionId].questions[game.currentPlayer].answer
       game.displayQuestion($(this).data('id'))
       game.displayAnswers($(this).data('id'))
       currentQuestion += 1
-
     }),
+
+
 
   $(".button").on("click", function(){
       userAnswer = $(this).text()
       console.log(userAnswer)
-
       game.checkAnswer() //calls checkAnswer!!
-      game.switchPlayerCheck() //checks whose turn it is
+      game.switchPlayerCheck()//checks whose turn it is
+      game.resetQuestions()//resets question boxes
       game.gameOver()
     })
   },
@@ -66,7 +71,6 @@ var game = {
       if ((userAnswer === correctAnswer) && game.currentPlayer === 0) {
             player1Points += 1
             console.log(player1Points)
-            // $("#right").fadeIn(3000)
             $("#p1-score").html(player1Points)
             game.rightAnswerAnimation()
       } else if ((userAnswer === correctAnswer) && game.currentPlayer === 1) {
@@ -79,8 +83,6 @@ var game = {
             console.log("you're wrong!")
           }
     },
-
-
 
   displayAnswers: function(houseName) {
     game.displayAnswer("#a1", 0, houseName, game.currentPlayer)
@@ -109,10 +111,10 @@ var game = {
   },
 
   rightAnswerAnimation: function() {
-    $("#right").fadeIn(2000).delay(2000).fadeOut(2000).hide("#right")
+    $("#right").fadeIn(2000).delay(1000).fadeOut(2000).hide("#right")
   },
   wrongAnswerAnimation: function() {
-    $("#wrong").fadeIn(2000).delay(2000).fadeOut(2000).hide("#wrong")
+    $("#wrong").fadeIn(2000).delay(1000).fadeOut(2000).hide("#wrong")
   },
 
   displayQuestion: function(houseName) {
@@ -121,16 +123,23 @@ var game = {
 
  checkWinner: function() {
    if (player1Points < player2Points) {
-     $(".answer-box-question").fadeIn(fadeTime).text("Player Two Wins!").delay(showQuestionTime).fadeOut(fadeTime)
-      $("#win").delay(2000).fadeIn(fadeTime).fadeOut(fadeTime)
+     $(".answer-box-question").fadeIn(fadeTime).text("Player Two Wins!").delay(showQuestionTime).fadeOut(fadeTime) &&
+     $("#win").delay(2000).fadeIn(fadeTime).fadeOut(fadeTime)
    } else if (player1Points == player2Points) {
-     $(".answer-box-question").fadeIn(fadeTime).text("It's a Tie!").delay(showQuestionTime).fadeOut(fadeTime)
+     $(".answer-box-question").fadeIn(fadeTime).text("It's a Tie!").delay(showQuestionTime).fadeOut(fadeTime) &&
       $("#win").delay(2000).fadeIn(fadeTime).fadeOut(fadeTime)
    } else {
-     $(".answer-box-question").fadeIn(fadeTime).text("Player One Wins!").delay(showQuestionTime).fadeOut(fadeTime)
+     $(".answer-box-question").fadeIn(fadeTime).text("Player One Wins!").delay(showQuestionTime).fadeOut(fadeTime) &&
       $("#win").delay(2000).fadeIn(fadeTime).fadeOut(fadeTime)
    }
+
  },
+
+ resetQuestions: function() {
+ if ($("#gryffindor") && $("#ravenclaw") && $("#slytherin") && ("#hufflepuff").hasClass("unavailable")){
+   $(".question-top").removeClass("unavailable")
+   }
+ }
 
  gameOver: function() {
    if (currentQuestion >= 8) {
