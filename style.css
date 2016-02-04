@@ -1,15 +1,28 @@
 @font-face {
-      font-family: "lumos";
-      src: url("LUMOS.TTF") format('truetype');
-    }
+    font-family: 'palitoonregular';
+    src: url('palitoon-font/palitoon-webfont.eot');
+    src: url('palitoon-font/palitoon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('palitoon-font/palitoon-webfont.woff2') format('woff2'),
+         url('palitoon-font/palitoon-webfont.woff') format('woff'),
+         url('palitoon-font/palitoon-webfont.ttf') format('truetype'),
+         url('palitoon-font/palitoon-webfont.svg#palitoonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
   background-color: black;
-  font-family: "lumos", cursive;
+  font-family: 'palitoonregular'
   color: #CCCCCC;
   text-align: center;
   text-shadow: 2px 2px 2px #9999CC;
   /*background: 'HP-theme-song.mp3';*/
+}
+
+.header {
+  font-family: 'palitoonregular';
+  color: #FF4;
+  font-size: 30px;
 }
 
 .main {
@@ -19,7 +32,7 @@ body {
   background-position: center;
   background-image: url("images/ForbForstBkgnd.jpg");
   height: 650px;
-  width: 1200x;
+  width: 1200px;
 }
 
 .question-top {
@@ -28,6 +41,12 @@ body {
   width: 150px;
   display: inline-block;
 }
+
+.unavailable {
+  display: none;
+  /*background-image: url("images/HogwartsWipeOut.jpg");*/
+}
+
 
 #gryffindor {
   background-image: url("images/gryffindor-crest.png");
@@ -66,6 +85,9 @@ body {
   background-position: center;
   margin-top: 20px;
   box-shadow: 3px 3px 5px 6px #CCCCCC;
+  font-family: 'palitoonregular';
+  color: #fff;
+  font-size: 25px;
 }
 
 #question-space {
@@ -82,7 +104,9 @@ body {
   border: 2px solid #330033;
   background: #660066;
   opacity: 0.75;
-  font-size: 30px;
+  font-family: 'palitoonregular';
+  color: #fff;
+  font-size: 35px;
   padding-top: 175px;
 }
 
@@ -95,8 +119,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 2px rgba(0,0,0,.15);
   color: #fff;
-  font-family: 'Calligraffitti', cursive;
-  font-size: 15px;
+  font-family: 'palitoonregular';
+  font-size: 20px;
   display: inline-block;
   padding-top: 2px;
 }
@@ -108,11 +132,19 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 2px rgba(0,0,0,.15);
   color: #fff;
-  font-family: 'Calligraffitti', cursive;
+  font-family: 'palitoonregular';
   font-size: 15px;
   display: inline-block;
   padding-top: 2px;
   position: absolute;
+}
+
+#right {
+  margin-top: 50px
+}
+
+#wrong {
+  margin-top: 50px
 }
 
 .player {
@@ -122,26 +154,35 @@ body {
 #player-1 {
   float: left;
   margin-left: 100px;
+  font-family: 'palitoonregular';
+  color: #fff;
   font-size: 20px;
 }
 
 #player-2 {
   float: right;
   margin-right: 100px;
+  font-family: 'palitoonregular';
+  color: #fff;
   font-size: 20px;
 }
 
 .score-box {
   border: 2px solid #fff;
+  font-family: 'palitoonregular';
+  color: #fff;
   font-size: 13px;
   height: 30px;
   width: 30px;
+  padding-top: 8px;
 }
 
 #p1-score {
   float: left;
   margin-left: -64px;
   margin-top: 40px;
+  font-family: 'palitoonregular';
+  color: #fff;
   font-size: 20px;
 }
 
@@ -149,5 +190,7 @@ body {
   float: right;
   margin-right: -64px;
   margin-top: 40px;
+  font-family: 'palitoonregular';
+  color: #fff;
   font-size: 20px;
 }
