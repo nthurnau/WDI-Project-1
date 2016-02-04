@@ -5,7 +5,7 @@ var player1Points = 0
 var player2Points = 0
 var showQuestionTime = 600 // 6000
 var answerWaitTime = 600 // 11000
-var answerDisplayTime = 800 // 10000
+var answerDisplayTime = 3000 // 10000
 var fadeTime = 200 // 2000
 var questionId = null
 var correctAnswer = null
@@ -41,27 +41,32 @@ var game = {
     $("#wrong").hide()
     $("#win").hide()
     $(".question-top").on("click", function(){
-        $(this).removeClass("available").addClass("unavailable")
-        // if ($("#gryffindor") && $("#ravenclaw") && $("#slytherin") && $("#hufflepuff").hasClass("unavailable")){
-        //   $(".question-top").removeClass("unavailable")
-        //
-        // }
+      $(this).removeClass("available").addClass("unavailable")
       questionId = $(this).data('id')
       correctAnswer = game.houses[questionId].questions[game.currentPlayer].answer
       game.displayQuestion($(this).data('id'))
       game.displayAnswers($(this).data('id'))
       currentQuestion += 1
-    }),
+    })
 
 
 
-  $(".button").on("click", function(){
+    $(".button").on("click", function(){
       userAnswer = $(this).text()
       console.log(userAnswer)
       game.checkAnswer() //calls checkAnswer!!
       game.switchPlayerCheck()//checks whose turn it is
-      game.resetQuestions()//resets question boxes
-      game.gameOver()
+      function resetQuestions() {
+        if ($("#gryffindor").hasClass("unavailable") && $("#ravenclaw").hasClass("unavailable") && $("#slytherin").hasClass("unavailable") && $("#hufflepuff").hasClass("unavailable")){
+          $(".question-top").removeClass("unavailable")
+          if (game.isGameOver()) {
+            game.checkWinner()
+          } else {
+            window.alert("It's Player Two's Turn!")
+          }
+        }
+      }
+      resetQuestions() //resets question boxes
     })
   },
 
@@ -103,9 +108,6 @@ var game = {
       console.log("changing turns")
       game.currentPlayer = 1
       console.log(game.currentPlayer)
-      if(currentQuestion == 4){
-        window.alert("It's Player 2's Turn!")
-      }
     }
     console.log("currentQuestion:", currentQuestion)
   },
@@ -120,7 +122,7 @@ var game = {
   displayQuestion: function(houseName) {
      $('#question-space').fadeIn(fadeTime).text(game.houses[questionId].questions[game.currentPlayer].body).delay(showQuestionTime).fadeOut(fadeTime).hide(".answer-box-question")
   },
-
+//checks to see who wins
  checkWinner: function() {
    if (player1Points < player2Points) {
      $(".answer-box-question").fadeIn(fadeTime).text("Player Two Wins!").delay(showQuestionTime).fadeOut(fadeTime) &&
@@ -130,23 +132,15 @@ var game = {
       $("#win").delay(2000).fadeIn(fadeTime).fadeOut(fadeTime)
    } else {
      $(".answer-box-question").fadeIn(fadeTime).text("Player One Wins!").delay(showQuestionTime).fadeOut(fadeTime) &&
-      $("#win").delay(2000).fadeIn(fadeTime).fadeOut(fadeTime)
+      $("#win").delay(5000).fadeIn(fadeTime).fadeOut(fadeTime)
    }
 
  },
-
- resetQuestions: function() {
- if ($("#gryffindor") && $("#ravenclaw") && $("#slytherin") && ("#hufflepuff").hasClass("unavailable")){
-   $(".question-top").removeClass("unavailable")
-   }
- }
-
- gameOver: function() {
-   if (currentQuestion >= 8) {
-     game.checkWinner() //checks who is winning
-   }
+ //checks to see if game is over. If game runs 8 questions it's over.
+  isGameOver: function() {
+   return currentQuestion >= 8
  },
-
+//array that contains the questions and their assosciated answers, answer choices, and options
   houses: [
     {
       name: "Gryffindor",
@@ -214,5 +208,5 @@ var game = {
     }
   ]
 }
-
+//starts the game
 game.gamePlay()
