@@ -56,4 +56,5 @@ The App Must:
 * The game is not responsive, so it only really works on one page size.
 * I wasn't able to figure out how to completely stop the game.
 * I think that a player could change his or her answer.
-* If someone clicks a "house box" before the question is done running, it causes the question to repeat and sometimes the answers don't appear. 
+* If someone clicks a "house box" before the question is done running, it causes the question to repeat and sometimes the answers don't appear.
+* If the player doesn't click by the time the multiple choice animation ends, the turn isn't logged, so the game is delayed.
