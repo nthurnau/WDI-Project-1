@@ -19,6 +19,8 @@ body {
   /*background: 'HP-theme-song.mp3';*/
 }
 
+
+
 .header {
   font-family: 'palitoonregular';
   color: #FF4;
@@ -151,7 +153,8 @@ h1 {
   color: #fff;
   font-family: 'palitoonregular';
   font-size: 15px;
-  float: right;
+  text-align: center;
+  margin: 0 auto;
   display: inline-block;
   padding-top: 2px;
 }
@@ -182,6 +185,8 @@ h1 {
   display: inline-block;
 
 }
+
+
 
 #player-1 {
   float: left;
