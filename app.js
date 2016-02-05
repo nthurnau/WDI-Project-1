@@ -3,14 +3,15 @@ var turnCount = 0
 var currentQuestion = 0 //tracks question number
 var player1Points = 0
 var player2Points = 0
-var showQuestionTime = 600 // change to 6000ms
-var answerWaitTime = 600 // change to 11000ms
+var showQuestionTime = 6000 // change to 6000ms
+var answerWaitTime = 6000 // change to 11000ms
 var answerDisplayTime = 9000 // change to 9000ms
-var fadeTime = 200 // change to 2000ms
+var fadeTime = 500 // change to 2000ms
 var questionId = null
 var correctAnswer = null
 var userAnswer = null
 var restartButton = $(".reset-button")
+var $wandSound = $("#wandSound")[0]
 
 
 //questions function for questions in array below: gets called in there; same with answers
@@ -52,7 +53,7 @@ var game = {
 //when the answer choice is clicked, it creates an array for the userAnswer, which helps with checkAnswer later
     $(".button").on("click", function(){
       userAnswer = $(this).text()
-      // $(".wandSound").play()
+      $wandSound.play()
       console.log(userAnswer)
       game.checkAnswer() //calls checkAnswer!!
       game.switchPlayerCheck()//checks whose turn it is
@@ -62,7 +63,7 @@ var game = {
           if (game.isGameOver()) { //runs a boolean to see if the game is over (8 questions is the max)
             game.checkWinner() //announces the winner
           } else {
-            $(".answer-box-question").delay(8000).fadeIn(fadeTime).text("It's Player Two's Turn").delay(showQuestionTime).fadeOut(fadeTime)
+            $(".answer-box-question").delay(5000).fadeIn(fadeTime).text("It's Player Two's Turn").delay(showQuestionTime).fadeOut(fadeTime)
           }
         }
       }
