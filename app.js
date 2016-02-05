@@ -196,10 +196,10 @@ var game = {
         answerOptions: ["a. 17 years old", "b. 5 years old", "c. 14 years old", "d. 11 years old"],
         answerQuestion: answerQuestion},
 
-        {body: "What is the name of the town where Harry's parents hid and where Dumbledor grew up?",
+        {body: "What is the name of the town where Harry's parents hid and where Dumbledore grew up?",
         askQuestion: askQuestion,
         answer: "b. Godrick/'s Hollow",
-        answerOptions: ["a. Godrick/'s Fuller", "b. Godrick/'s Hollow", "c. Goodman/'s Hollow", "d. Little Whinging"],
+        answerOptions: ["a. Godrick's Fuller", "b. Godrick's Hollow", "c. Goodman's Hollow", "d. Little Whinging"],
         answerQuestion: answerQuestion}
       ]
     }
