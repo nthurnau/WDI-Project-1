@@ -161,7 +161,7 @@ var game = {
         {body: "Who told Voldemort where Harry's parents were hiding?",
         askQuestion: askQuestion,
         answer: "a. Peter Pettigrew",
-        answerOptions: ["a. Peter Pettigrew", "b. Sirius Black", "c. Hargird", "d. Lucius Malfoy"],
+        answerOptions: ["a. Peter Pettigrew", "b. Sirius Black", "c. Hargrid", "d. Lucius Malfoy"],
         answerQuestion: answerQuestion},
 
         {body: "What is Professor McGonnagal's animagus?",
@@ -198,7 +198,7 @@ var game = {
 
         {body: "What is the name of the town where Harry's parents hid and where Dumbledore grew up?",
         askQuestion: askQuestion,
-        answer: "b. Godrick/'s Hollow",
+        answer: "b. Godrick's Hollow",
         answerOptions: ["a. Godrick's Fuller", "b. Godrick's Hollow", "c. Goodman's Hollow", "d. Little Whinging"],
         answerQuestion: answerQuestion}
       ]
